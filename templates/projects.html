@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}Projects - Lennon's Personal Website{% endblock %}
+
+{% block content %}
+<h2>My Projects</h2>
+
+<div style="text-align: left; margin-left: 20px;">
+
+    <!-- Personal Projects Section -->
+    <h2><u>Personal Projects</u></h2>
+
+    <h3>Portfolio Website</h3>
+    <ul>
+        <li>Designed and deployed a personal portfolio website on a Raspberry Pi running a headless Ubuntu server using Flask, Gunicorn, and Apache.</li>
+        <li>Configured the server to run securely over HTTPS using an SSL certificate on port 443.</li>
+        <li>Developed responsive HTML and CSS templates with Bootstrap for seamless mobile and desktop compatibility.</li>
+        <li>Integrated GitHub and LinkedIn links, along with direct links to coding projects hosted on GitHub.</li>
+        <li>Configured and maintained the server using SSH, implementing DDoS protection and IP blocking for enhanced security.</li>
+    </ul>
+
+    <h3>DIY Home Thermostat with Home Assistant</h3>
+    <ul>
+        <li>Soldered microcontrollers and wired thermometers to create a DIY home thermostat system.</li>
+        <li>Set up and configured Home Assistant on a Raspberry Pi to control the system.</li>
+        <li>Wrote YAML configuration files for automating heating and cooling based on sensor data.</li>
+        <li>Configured a DNS server to access Home Assistant remotely using the Home Assistant app.</li>
+    </ul>
+
+    <h3>MotionEyeOS Security System</h3>
+    <ul>
+        <li>Designed and implemented a home security system using Raspberry Pi and MotionEyeOS.</li>
+        <li>Configured a camera-based motion detection system and set up a dedicated Ubuntu Linux server for video storage using SSH.</li>
+        <li>Demonstrated proficiency in network configuration, system administration, and open-source software integration.</li>
+    </ul>
+
+    <!-- Academic Projects Section -->
+    <h2><u>Academic Projects</u></h2>
+
+    <h3>Open-Source Secure Multi-Modal AI Platform</h3>
+    <ul>
+        <li>Led a six-person engineering team through all stages of the software development lifecycle, including requirements gathering, architecture creation, development, testing, deployment, and final presentation.</li>
+        <li>Provisioned and secured AWS EC2 GPU instances to host 7B to 14B parameter models.</li>
+        <li>Implemented and tested open-source solutions such as Ollama and Open WebUI, ensuring alignment with sponsor expectations.</li>
+        <li>Developed an end-to-end setup script that detects GPU support, installs dependencies, applies security patches, configures LUKS-encrypted Docker storage, enables GPU acceleration via NVIDIA Toolkit, and configures Ollama and Open WebUI services with systemd to auto-start on boot.</li>
+        <li>Held weekly stakeholder meetings to present sprint progress and gather feedback.</li>
+    </ul>
+
+    <h3>KWIC Web Search Engine</h3>
+    <ul>
+        <li>Developed a web search engine using a KWIC index, coded in Python with a Flask application for the frontend.</li>
+        <li>Utilized AWS RDS for database storage and SQLAlchemy to manage database queries.</li>
+        <li>Implemented concurrency to handle multiple requests efficiently, improving search engine performance.</li>
+        <li>Integrated web scraping to dynamically gather and index content from external websites.</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/SE6362DreamTeam/GoodProject" target="_blank">View KWIC Web Search Engine on GitHub</a></li>
+    </ul>
+
+    <h3>Requirements for an Indoor Navigation App for the Visually Impaired</h3>
+    <ul>
+        <li>Conducted stakeholder analysis, identifying primary and secondary stakeholders, including visually impaired users, caregivers, and developers.</li>
+        <li>Defined and validated functional and non-functional requirements, such as real-time audio feedback, hazard detection, system usability, customization options, and route optimization for user comfort and safety.</li>
+    </ul>
+
+    <h3>Database and Webpage Project</h3>
+    <ul>
+        <li>Developed a user-friendly website using HTML, Bootstrap (frontend) and Python, Flask (backend).</li>
+        <li>Employed SQLAlchemy to handle database queries and data storage efficiently.</li>
+        <li>Successfully delivered a fully functional system showcasing strong web development, database design, and application integration skills.</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/UTD-4347-Databosses/Walmart_Database" target="_blank">View Database Project on GitHub</a></li>
+    </ul>
+
+    <h3>Project Management: Mock Google Budget Integration</h3>
+    <ul>
+        <li>Collaborated on managing the project of a mock Google Budget application, managing hypothetical resources, including personnel and salary allocations.</li>
+        <li>Utilized Microsoft Project for scheduling, budgeting, and risk management.</li>
+        <li>Implemented project layering techniques to streamline the development timeline and optimize resource utilization.</li>
+    </ul>
+
+    <h3>Multithreading Simulation in a Doctor's Office</h3>
+    <ul>
+        <li>Created a multithreading simulation where threads represented different entities in a doctor's office (patients, receptionist, nurses, and doctors) interacting with each other.</li>
+        <li>Debugged complex threading issues and ensured smooth interaction between multiple threads representing real-world processes.</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/BeTheChange07/Doctor-s-Office-Thread-Simulation" target="_blank">View Multithreading Simulation on GitHub</a></li>
+    </ul>
+
+    <h3>CPU and Memory Interaction Simulation</h3>
+    <ul>
+        <li>Developed a simulation of CPU and memory interaction using pipes and forks to create two processes that fetched and processed commands, simulating a basic CPU architecture.</li>
+        <li>Debugged issues related to pipes messaging and wait systems; adapted the project to Linux due to the lack of support for forks and pipes in Windows.</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/BeTheChange07/SimulatedCPU-MemorySystem" target="_blank">View CPU and Memory Simulation on GitHub</a></li>
+    </ul>
+
+</div>
+
+{% endblock %}

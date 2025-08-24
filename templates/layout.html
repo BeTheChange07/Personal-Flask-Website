@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lennon's Personal Website{% endblock %}</title>
+    <link rel="icon" href="static/images/Icon Image In Corner.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* Profile picture styles */
+        .profile-pic {
+            width: 80px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .content {
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: 30px;
+        }
+
+        .contact-center {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .header {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .profile-pic {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 1.8em; /* Slightly smaller title on mobile */
+            }
+
+            .profile-pic {
+                position: relative; /* Change position to relative so it stacks */
+                order: -1; /* Move the picture above the title */
+                top: 0;
+                right: 0;
+                margin-bottom: 10px; /* Add space below the image */
+                width: 70px; /* Shrink image on smaller screens */
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="static/images/your-image-url.jpg" alt="Your Picture" class="profile-pic">
+        <h1>Lennon's Personal Website</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/projects">Projects</a>
+            <a href="/education">Education</a>
+            <a href="/experience">Experience</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div class="footer">
+         <!-- Contact Section with CAPTCHA -->
+<p>Contact Me:</p>
+
+<!-- Centered CAPTCHA and Button -->
+<div class="contact-center">
+    <!-- Hidden Email (revealed after CAPTCHA) -->
+    <div id="contact-info" style="display: none;">
+        <p>Email: <a id="email" href="#"></a></p>
+    </div>
+
+    <form id="captcha-form">
+        <div class="g-recaptcha" data-sitekey="6Le3vFErAAAAAHSJzPl8jskWFfPDGhycV42Gn7sw"></div>
+        <br>
+        <button type="submit">Reveal Email</button>
+    </form>
+</div>
+
+
+
+<!-- reCAPTCHA API -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+    document.getElementById("captcha-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const token = grecaptcha.getResponse();
+
+        fetch("/validate-captcha", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: token })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById("captcha-form").style.display = "none";
+                document.getElementById("contact-info").style.display = "block";
+                document.getElementById("email").textContent = "lpcrow0722@gmail.com";
+                document.getElementById("email").href = "mailto:lpcrow0722@gmail.com";
+            } else {
+                alert("CAPTCHA failed. Please try again.");
+            }
+        });
+    });
+</script>
+        <p>Connect With Me:</p>
+        <a href="https://github.com/BeTheChange07" target="_blank">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="30" height="30">
+        </a>
+        <a href="https://www.linkedin.com/in/lennon-crow-3b8132235" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" height="30">
+        </a>
+    </div>
+</body>
+</html>

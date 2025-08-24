@@ -1,0 +1,46 @@
+<!-- templates/work_experience.html -->
+{% extends "layout.html" %}
+
+{% block title %}Work Experience - Lennon's Personal Website{% endblock %}
+
+{% block content %}
+<h2>Work Experience</h2>
+
+<div style="text-align: left; margin-left: 20px;">
+
+    <!-- Parkland Health Section -->
+    <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+        <img src="{{ url_for('static', filename='images/parkland_hosp_logo.png') }}" alt="Parkland Health Logo" style="width: 50px; height: auto; margin-right: 15px;">
+        <div>
+            <p><strong>Parkland Health</strong></p>
+            <p>- Information Technology Intern</p>
+            <p style="margin-left: 20px;"><em>January 2025 – Present</em></p>
+            <ul>
+                 <li>Led interviews with 15 high school summer intern candidates, contributing to final selection decisions and ensuring alignment with team requirements.</li>
+                <li>Gathered classification requirements from Parkland department directors and relayed them to external contractors to guide the redesign of the internal self-service portal.</li>
+                <li>Built an Excel-based tool that automated the scoring of vendor proposals for a major call center system project, replacing manual grading and making the selection process faster, more consistent, and less error-prone.</li>
+                <li>Participated in change and incident management meetings, contributing to real-time discussions and gaining practical insight into IT service workflows.</li>
+                <li>Shadowed Systems Engineering, Desktop Support, and IT Fulfillment teams to gain a comprehensive understanding of Parkland’s IT infrastructure and support cross-functional collaboration.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Weatherford College Tutor Section -->
+    <div style="display: flex; align-items: flex-start;">
+        <img src="{{ url_for('static', filename='images/new wc Logo cropped_6.jpg') }}" alt="Weatherford College Logo" style="width: 50px; height: auto; margin-right: 15px;">
+        <div>
+            <p><strong>Weatherford College</strong></p>
+            <p>- Mathematics Tutor</p>
+            <p style="margin-left: 20px;"><em>April 2021 – May 2022</em></p>
+            <ul>
+                <li>Tutored approximately 25 students per week, using individualized strategies to explain complex mathematical concepts clearly and effectively.</li>
+                <li>Inspired student interest by linking basic mathematical principles to practical use cases and higher-level topics in STEM education.</li>
+                <li>Adapted instruction to varying skill levels, resulting in improved comprehension and academic performance.</li>
+                <li>Built a supportive learning environment that encouraged student confidence, participation, and long-term success in mathematics.</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

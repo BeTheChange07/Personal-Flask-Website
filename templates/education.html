@@ -1,0 +1,36 @@
+<!-- templates/education.html -->
+{% extends "layout.html" %}
+
+{% block title %}Education - Lennon's Personal Website{% endblock %}
+
+{% block content %}
+<h2>Education</h2>
+
+<div style="text-align: left; margin-left: 20px;">
+    <!-- UTD Section -->
+    <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+        <img src="{{ url_for('static', filename='images/UT_Dallas_Monogram_-_2_color_(Updated).jpg') }}" alt="UT Dallas Logo" style="width: 50px; height: auto; margin-right: 15px;">
+        <div>
+            <p><strong>The University of Texas at Dallas</strong></p>
+            <p>- Master of Science in Software Engineering</p>
+            <p style="margin-left: 20px;">GPA:3.736</p> <!-- Indented GPA -->
+            <p style="margin-left: 20px;"><em>August 2024 - May 2026</em></p> <!-- Indented Timeline -->
+            <p>- Bachelor of Science in Software Engineering</p>
+            <p style="margin-left: 20px;">GPA: 3.751</p> <!-- Indented GPA -->
+            <p style="margin-left: 20px;"><em>August 2022 - May 2025</em></p> <!-- Indented Timeline -->
+        </div>
+    </div>
+
+    <!-- Weatherford College Section -->
+    <div style="display: flex; align-items: flex-start;">
+        <img src="{{ url_for('static', filename='images/new wc Logo cropped_6.jpg') }}" alt="Weatherford College Logo" style="width: 50px; height: auto; margin-right: 15px;">
+        <div>
+            <p><strong>Weatherford College</strong></p>
+            <p>- Associate of Science in General Studies</p>
+            <p style="margin-left: 20px;">GPA: 3.757</p> <!-- Indented GPA -->
+            <p style="margin-left: 20px;"><em>January 2021 – May 2022</em></p> <!-- Indented Timeline -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

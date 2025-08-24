@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+
+        .stat {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Stats</h1>
+
+    <!-- Uptime -->
+    <h2>Uptime</h2>
+    <div class="stat"><strong>Uptime:</strong> {{ stats['uptime'] }}</div>
+    <div class="stat"><strong>Public IP:</strong> {{ stats['public_ip'] }}</div>
+
+    <!-- Network Activity -->
+    <h2>Network Activity</h2>
+    <table>
+        <tr>
+            <th>Bytes Sent (MB)</th>
+            <th>Bytes Received (MB)</th>
+            <th>Packets Sent</th>
+            <th>Packets Received</th>
+        </tr>
+        <tr>
+            <td>{{ stats['network']['bytes_sent'] }}</td>
+            <td>{{ stats['network']['bytes_recv'] }}</td>
+            <td>{{ stats['network']['packets_sent'] }}</td>
+            <td>{{ stats['network']['packets_recv'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>
